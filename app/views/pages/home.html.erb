@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/drfmymoki/image/upload/v1677519243/cdf28c2d-5a2d-42db-9346-c2886e3bb0ae_dog-indoors-woman-sofa-AdobeStock_199489473_vpmcwa.avif);">
+  <div class="container">
+    <h1><strong>Share your pet</strong></h1>
+    <h1><strong>or lend it to others</strong></h1>
+    <%= link_to "w o o f !", "#", class: "btn btn-gradient" %>
+  </div>
+</div>
+
+<div id="pet-cards">
+  <div class="cards">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/drfmymoki/image/upload/c_crop,g_north,h_549,w_1220/v1677519075/4.-labrador-1220x687_g5awms.jpg)">
+      Dogs
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/drfmymoki/image/upload/v1677518955/kitten-playing-with-toy-mouse-royalty-free-image-590055188-1542816918_jwpeym.jpg)">
+      Cats
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/drfmymoki/image/upload/v1677518639/7030094-cute-animals_lganeb.jpg)">
+      Other
+    </div>
+  </div>
+</div>
