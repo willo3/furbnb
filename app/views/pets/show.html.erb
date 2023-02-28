@@ -8,3 +8,11 @@
   <li><strong>Age:</strong> <%= @pet.age %></li>
   <li><strong>Special Instructions:</strong> <%= @pet.special_instructions %></li>
 </ul>
+
+<%# <% link_to 'Delete'
+  pet_path(@pet),
+  data: {turbo_method: :delete, turbo_method: "Are you sure?"}
+%>
+
+<%= link_to "Edit", edit_pet_path(@pet)%>
+<%= link_to "Back to All Adorable Pets page", pets_path %>
