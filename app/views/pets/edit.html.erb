@@ -1,0 +1,12 @@
+
+<h1>Please, edit your details</h1>
+<%= simple_form_for(@pet) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :user_id %>
+  <%= f.input :species %>
+  <%= f.input :sex %>
+  <%= f.input :neutered %>
+  <%= f.input :age %>
+  <%= f.input :special_instructions %>
+  <%= f.submit %>
+<% end %>

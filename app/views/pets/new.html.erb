@@ -1,0 +1,11 @@
+<h2>Add a new pet:</h2>
+
+<%= simple_form_for(@pet) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :species %>
+  <%= f.input :sex %>
+  <%= f.input :neutered %>
+  <%= f.input :age %>
+  <%= f.input :special_instructions %>
+  <%= f.submit %>
+<% end %>
