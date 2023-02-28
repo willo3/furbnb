@@ -1,9 +1,13 @@
 <h1>All Adorable Pets</h1>
 
-<ul>
-  <% @pet.each do |pet| %>
-  <li><%= link_to pet.name, pet_path(pet) %></li>
-  <% end %>
-</ul>
+<div class="col-5 col-sm-4 col-lg-4 pr-0 mb-3">
+  <ul>
+    <% @pet.each do |pet| %>
+    <li><%= link_to pet.name, pet_path(pet) %></li>
+    <% end %>
+  </ul>
+</div>
 
-<%= link_to "Add a new pet", new_pet_path %>
+<div class="d-flex d-md-none align-center justify-content-center">
+  <%= link_to "Add a new pet", new_pet_path %>
+</div>
