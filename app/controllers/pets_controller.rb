@@ -29,7 +29,7 @@ class PetsController < ApplicationController
   def destroy
     @pet = Pet.find(params[:id])
     @pet.destroy
-    redirect_to pet_path(@review.pet)
+    redirect_to pet_path(@pet)
   end
 
   private
