@@ -46,12 +46,12 @@ user5 = User.create(
   password_confirmation: '123456'
 )
 
-user_ids = User.pluck(:id)
+animals = ['Cat', 'Dog', 'Rabbit', 'Duck', 'Hamster', 'Iguana', 'Parrot']
 
 100.times do
   pet = Pet.new(
     name: Faker::Creature::Dog.name,
-    species: Faker::Creature::Animal.name,
+    species: animals.sample,
     sex: Faker::Gender.binary_type,
     neutered: [true, false].sample,
     age: rand(0..100),

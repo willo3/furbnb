@@ -2,7 +2,7 @@
 
 <%= simple_form_for(@pet) do |f| %>
   <%= f.input :name %>
-  <%= f.input :species %>
+  <%= f.input :species, :collection => ['Cat', 'Dog', 'Rabbit', 'Duck', 'Hamster', 'Iguana', 'Parrot'] %>
   <%= f.input :sex %>
   <%= f.input :neutered %>
   <%= f.input :age %>
