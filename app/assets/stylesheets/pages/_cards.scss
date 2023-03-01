@@ -37,3 +37,47 @@
   width: 100%;
   height: 100%;
 }
+
+.card-name {
+  padding-left: 20px;
+  padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bolder;
+}
+
+
+.card-pet-closeup {
+  overflow: hidden;
+  height: auto;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-pet-closeup img {
+  padding: 10px;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
+.card-pet-closeup h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-pet-closeup p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-pet-closeup .card-pet-infos {
+  padding: 16px;
+  font-size: xx-large;
+}

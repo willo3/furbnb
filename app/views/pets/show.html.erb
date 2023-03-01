@@ -1,19 +1,27 @@
-<h2>Pet Details:</h2>
-
 <%= cl_image_tag @pet.photo.key, height: 200, width: 200, crop: :fill %>
-<%# <%= cl_image_path @pet.photo.key, height: 50, width: 60, crop: :fill %>
-<%# <% raise %>
 
-<ul>
-  <li><strong>Name:</strong> <%= @pet.name %></li>
-  <li><strong>Species:</strong> <%= @pet.species %></li>
-  <li><strong>Sex:</strong> <%= @pet.sex %></li>
-  <li><strong>Neutered:</strong> <%= @pet.neutered ? "Yes" : "No" %></li>
-  <li><strong>Age:</strong> <%= @pet.age %></li>
-  <li><strong>Special Instructions:</strong> <%= @pet.special_instructions %></li>
-</ul>
+<div class="container">
+  <h1>Pet Details:</h1>
+  <div class="card-pet-closeup">
+  <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677675099/Untitled_design_2_fibtjg.png">
+    <div class="card-pet-infos">
+  <ul>
+    <li><strong>Name:</strong> <%= @pet.name %></li>
+    <li><strong>Species:</strong> <%= @pet.species %></li>
+    <li><strong>Sex:</strong> <%= @pet.sex %></li>
+    <li><strong>Neutered:</strong> <%= @pet.neutered ? "Yes" : "No" %></li>
+    <li><strong>Age:</strong> <%= @pet.age %></li>
+    <li><strong>Special Instructions:</strong> <%= @pet.special_instructions %></li>
+  </ul>
+  <%= link_to "Edit", edit_pet_path(@pet), class: "btn btn-gradient"%>
 
-<%= link_to "Edit", edit_pet_path(@pet)%>
-<%= link_to "Back to Adorable Pets list", pets_path %>
+  <%= link_to "Book me!", new_pet_booking_path(@pet), class: "btn btn-gradient"%>
 
-<%# <%= link_to 'Delete', pet_path(@pet), data: {turbo_method: :delete, turbo_method: "Are you sure?"} %> 
+  <%= link_to "Back to Adorable Pets list", pets_path, class: "btn btn-gradient" %>
+    </div>
+  </div>
+<%# <% link_to 'Delete'
+  pet_path(@pet),
+  data: {turbo_method: :delete, turbo_method: "Are you sure?"}
+%>
+</div>
