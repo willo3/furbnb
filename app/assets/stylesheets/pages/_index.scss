@@ -10,6 +10,17 @@
   flex-wrap: wrap;
 }
 
+#photo-pet img {
+  height: 300px;
+  width: 300px;
+  flex-wrap: wrap;
+  object-fit: cover;
+}
+
+#button-pet-details {
+  margin-top: 10px;
+}
+
 .card {
   flex: 1 0 500px;
   box-sizing: border-box;
