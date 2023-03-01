@@ -24,4 +24,11 @@ module Furbnb
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end
+
+  Cloudinary.config do |config|
+    config.cloud_name = 'dlijrizm6'
+    config.api_key = '154889172448527'
+    config.api_secret = 'gvSbKbMHlAmECIJ8aE1liZEoFsI'
+    config.secure = true
+  end
 end
