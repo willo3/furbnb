@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(pet_params)
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
     if @booking.save
       redirect_to @booking, notice: "Booking was successfully created!"
@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
 
   def update
     set_booking
-    @booking.update(pet_params)
+    @booking.update(booking_params)
     redirect_to booking_path(@booking)
   end
 
