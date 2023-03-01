@@ -12,6 +12,7 @@
     <li><strong>Special Instructions:</strong> <%= @pet.special_instructions %></li>
   </ul>
   <%= link_to "Edit", edit_pet_path(@pet), class: "btn btn-gradient"%>
+  <%= link_to "Book me!", booking_path("new"), class: "btn btn-gradient"%>
   <%= link_to "Back to Adorable Pets list", pets_path, class: "btn btn-gradient" %>
     </div>
   </div>
