@@ -1,0 +1,15 @@
+<h2>Booking Details:</h2>
+
+<ul>
+  <li><strong>Start Time:</strong> <%= @booking.start_time %></li>
+  <li><strong>Species:</strong> <%= @booking.end_time %></li>
+</ul>
+
+
+<%= link_to "Edit", edit_booking_path(@booking)%>
+<%= link_to "Back to Adorable Pets page", pets_path %>
+
+<%# <% link_to 'Delete'
+  pet_path(@pet),
+  data: {turbo_method: :delete, turbo_method: "Are you sure?"}
+%>
