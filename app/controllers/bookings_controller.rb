@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Bookng.new
   end
-  
+
   def create
     @booking = Booking.new(pet_params)
     @booking.user = current_user
@@ -43,7 +43,4 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def booking_params
-    params.require(:pet).permit(:name, :species, :sex, :neutered, :age, :special_instructions)
-  end
 end
