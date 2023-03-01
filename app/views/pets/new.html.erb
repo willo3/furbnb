@@ -1,5 +1,5 @@
+<div class="container">
 <h2>Add a new pet:</h2>
-
 <%= simple_form_for(@pet) do |f| %>
   <%= f.input :name %>
   <%= f.input :species, :collection => ['Cat', 'Dog', 'Rabbit', 'Duck', 'Hamster', 'Iguana', 'Parrot'] %>
@@ -9,3 +9,4 @@
   <%= f.input :special_instructions %>
   <%= f.submit %>
 <% end %>
+</div>
