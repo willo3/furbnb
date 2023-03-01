@@ -1,13 +1,22 @@
-<h1>All Adorable Pets</h1>
+<div class="container" id="grid">
 
-<div class="col-5 col-sm-4 col-lg-4 pr-0 mb-3">
-  <ul>
-    <% @pet.each do |pet| %>
-    <li><%= link_to pet.name, pet_path(pet) %></li>
-    <% end %>
-  </ul>
-</div>
+  <h1>All Adorable Pets</h1>
 
-<div class="d-flex d-md-none align-center justify-content-center">
-  <%= link_to "Add a new pet", new_pet_path %>
+
+
+  <%= link_to "Add a new pet", new_pet_path, class: "btn btn-gradient" %>
+
+  <div>
+    <div class="centered">
+      <section class="cards">
+        <% @pet.each do |pet| %>
+        <article class="card">
+        <p class="card-name"><%= link_to pet.name, pet_path(pet) %></p>
+        <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677675099/Untitled_design_2_fibtjg.png">
+          <%= link_to "Details", pet_path(pet), class: "btn btn-gradient" %>
+        </article>
+        <% end %>
+      </section>
+    </div>
+  </div>
 </div>
