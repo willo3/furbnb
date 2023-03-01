@@ -36,7 +36,7 @@ class PetsController < ApplicationController
   def destroy
     set_pet
     @pet.destroy
-    redirect_to pet_path(@pet), status: :see_other
+    redirect_to pets_path, status: :see_other
   end
 
   private
@@ -46,6 +46,6 @@ class PetsController < ApplicationController
   end
 
   def pet_params
-    params.require(:pet).permit(:name, :species, :sex, :neutered, :age, :special_instructions)
+    params.require(:pet).permit(:name, :species, :sex, :neutered, :age, :special_instructions, :photo)
   end
 end

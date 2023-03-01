@@ -1,5 +1,9 @@
 <h2>Pet Details:</h2>
 
+<%= cl_image_tag @pet.photo.key, height: 200, width: 200, crop: :fill %>
+<%# <%= cl_image_path @pet.photo.key, height: 50, width: 60, crop: :fill %>
+<%# <% raise %>
+
 <ul>
   <li><strong>Name:</strong> <%= @pet.name %></li>
   <li><strong>Species:</strong> <%= @pet.species %></li>
@@ -9,10 +13,7 @@
   <li><strong>Special Instructions:</strong> <%= @pet.special_instructions %></li>
 </ul>
 
-<%# <% link_to 'Delete'
-  pet_path(@pet),
-  data: {turbo_method: :delete, turbo_method: "Are you sure?"}
-%>
-
 <%= link_to "Edit", edit_pet_path(@pet)%>
 <%= link_to "Back to Adorable Pets list", pets_path %>
+
+<%# <%= link_to 'Delete', pet_path(@pet), data: {turbo_method: :delete, turbo_method: "Are you sure?"} %> 
