@@ -1,4 +1,5 @@
-<div class="container" id="grid">
+<div id="pet-index">
+<div class="container">
 
   <h1>All Adorable Pets</h1>
 
@@ -8,7 +9,7 @@
 <div class="petcard-grid">
   <div>
     <div class="centered">
-      <section class="cards">
+      <section class="cards-grid">
       <%# Loop for iterating pet cards %>
         <% @pet.each do |pet| %>
           <%# Pet card %>
@@ -24,7 +25,7 @@
             <% if pet.photo.attached? %>
              <%= cl_image_tag pet.photo.key, class: "petcard__background" %>
              <% else %>
-        <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677675099/Untitled_design_2_fibtjg.png">
+        <%# <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677675099/Untitled_design_2_fibtjg.png"> %>
         <% end %>
             <div class="petcard__content | flow">
               <div class="petcard__content--container | flow">
@@ -47,4 +48,5 @@
       </div>
     </section>
   </div>
+</div>
 </div>

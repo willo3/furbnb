@@ -105,7 +105,7 @@ unsplash_images.each do |image|
 
 pet = Pet.new(
   name: Faker::Creature::Dog.name,
-  species: 'Hammster',
+  species: 'Hamster',
   sex: Faker::Gender.binary_type,
   neutered: [true, false].sample,
   age: rand(0..2),
@@ -150,6 +150,5 @@ pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 pet.save!
 end
 
-p unsplash_images.first.urls.regular
 
 puts 'Finished!'
