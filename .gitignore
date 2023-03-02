@@ -43,3 +43,4 @@
 .env*
 
 echo '.env*' >> .gitignore
+.env*
