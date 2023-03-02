@@ -2,7 +2,11 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pets = Pet.all
+    if params[:query].present?
+      @pets = Pet.where(species: params[:query])
+    else
+      @pets = Pet.all
+    end
   end
 
   def show

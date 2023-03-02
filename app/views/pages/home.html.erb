@@ -9,11 +9,11 @@
 <div class="expand-menu-container">
   <div class="box">
     <img src="https://res.cloudinary.com/drfmymoki/image/upload/c_crop,g_north,h_549,w_1220/v1677519075/4.-labrador-1220x687_g5awms.jpg">
-    <span>Dogs</span>
+    <span><%= link_to "Dogs", pets_path(query:'Dog') %></span>
   </div>
   <div class="box">
     <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677518955/kitten-playing-with-toy-mouse-royalty-free-image-590055188-1542816918_jwpeym.jpg">
-    <span>Cats</span>
+    <span><%= link_to "Cats", pets_path(query:'Cat') %></span>
   </div>
   <div class="box">
     <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677518639/7030094-cute-animals_lganeb.jpg">

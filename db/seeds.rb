@@ -35,7 +35,7 @@ unsplash_images.each do |image|
   user.save!
   end
 
-  animals = ['Dog',   'Cat', 'Rabbit', 'Duck', 'Hamster', 'Iguana', 'Parrot']
+  animals = ['Dog', 'Cat', 'Rabbit', 'Duck', 'Hamster', 'Iguana', 'Parrot']
 
   unsplash_images = Unsplash::Photo.search('dog', 1, 5)
 
