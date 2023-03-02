@@ -6,57 +6,150 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
-
-puts 'Cleaning the databases...'
+require 'open-uri'
 
 Pet.destroy_all
 User.destroy_all
 
 puts 'Cleaning done!'
 
-puts 'Creating 100 fake users and pets...'
+puts 'Creating 20 fake users and pets...'
 
-user1 = User.create(
-  email: 'email1@email.com',
-  password: '123456',
-  password_confirmation: '123456'
-)
+unsplash_images = Unsplash::Photo.search('headshot', 1, 5)
 
-user2 = User.create(
-  email: 'email2@email.com',
-  password: '123456',
-  password_confirmation: '123456'
-)
+unsplash_images.each do |image|
 
-user3 = User.create(
-  email: 'email3@email.com',
-  password: '123456',
-  password_confirmation: '123456'
-)
-
-user4 = User.create(
-  email: 'email4@email.com',
-  password: '123456',
-  password_confirmation: '123456'
-)
-
-user5 = User.create(
-  email: 'email5@email.com',
-  password: '123456',
-  password_confirmation: '123456'
-)
+  user = User.new(
+    email: Faker::Internet.safe_email,
+    password: "password",
+    password_confirmation: "password"
+  )
+  file = URI.open(image.urls.regular)
+  user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+  user.save!
+  end
 
 animals = ['Cat', 'Dog', 'Rabbit', 'Duck', 'Hamster', 'Iguana', 'Parrot']
 
-100.times do
-  pet = Pet.new(
-    name: Faker::Creature::Dog.name,
-    species: animals.sample,
-    sex: Faker::Gender.binary_type,
-    neutered: [true, false].sample,
-    age: rand(0..100),
-    user: User.all.sample
-  )
-  pet.save!
+unsplash_images = Unsplash::Photo.search('cat', 1, 5)
+
+unsplash_images.each do |image|
+
+pet = Pet.new(
+  name: Faker::Creature::Dog.name,
+  species: 'Cat',
+  sex: Faker::Gender.binary_type,
+  neutered: [true, false].sample,
+  age: rand(0..20),
+  user: User.all.sample
+)
+file = URI.open(image.urls.regular)
+pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+pet.save!
 end
+
+unsplash_images = Unsplash::Photo.search('dog', 1, 5)
+
+unsplash_images.each do |image|
+
+pet = Pet.new(
+  name: Faker::Creature::Dog.name,
+  species: 'Dog',
+  sex: Faker::Gender.binary_type,
+  neutered: [true, false].sample,
+  age: rand(0..8),
+  user: User.all.sample
+)
+file = URI.open(image.urls.regular)
+pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+pet.save!
+end
+
+unsplash_images = Unsplash::Photo.search('rabbit', 1, 5)
+
+unsplash_images.each do |image|
+
+pet = Pet.new(
+  name: Faker::Creature::Dog.name,
+  species: 'Rabbit',
+  sex: Faker::Gender.binary_type,
+  neutered: [true, false].sample,
+  age: rand(0..5),
+  user: User.all.sample
+)
+file = URI.open(image.urls.regular)
+pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+pet.save!
+end
+
+unsplash_images = Unsplash::Photo.search('duck', 1, 5)
+
+unsplash_images.each do |image|
+
+pet = Pet.new(
+  name: Faker::Creature::Dog.name,
+  species: 'Duck',
+  sex: Faker::Gender.binary_type,
+  neutered: [true, false].sample,
+  age: rand(0..15),
+  user: User.all.sample
+)
+file = URI.open(image.urls.regular)
+pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+pet.save!
+end
+
+unsplash_images = Unsplash::Photo.search('hamster', 1, 5)
+
+unsplash_images.each do |image|
+
+pet = Pet.new(
+  name: Faker::Creature::Dog.name,
+  species: 'Hammster',
+  sex: Faker::Gender.binary_type,
+  neutered: [true, false].sample,
+  age: rand(0..2),
+  user: User.all.sample
+)
+file = URI.open(image.urls.regular)
+pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+pet.save!
+end
+
+unsplash_images = Unsplash::Photo.search('iguana', 1, 5)
+
+unsplash_images.each do |image|
+
+pet = Pet.new(
+  name: Faker::Creature::Dog.name,
+  species: 'Iguana',
+  sex: Faker::Gender.binary_type,
+  neutered: [true, false].sample,
+  age: rand(0..15),
+  user: User.all.sample
+)
+file = URI.open(image.urls.regular)
+pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+pet.save!
+end
+
+unsplash_images = Unsplash::Photo.search('parrot', 1, 5)
+
+unsplash_images.each do |image|
+
+pet = Pet.new(
+  name: Faker::Creature::Dog.name,
+  species: 'Parrot',
+  sex: Faker::Gender.binary_type,
+  neutered: [true, false].sample,
+  age: rand(0..25),
+  user: User.all.sample
+)
+file = URI.open(image.urls.regular)
+pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+pet.save!
+end
+
+p unsplash_images.first.urls.regular
+
 puts 'Finished!'

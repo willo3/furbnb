@@ -58,7 +58,9 @@ gem "simple_form", github: "heartcombo/simple_form"
 
 gem 'bootstrap'
 
-gem "faker"
+gem 'faker'
+
+gem 'unsplash'
 
 gem 'cloudinary'
 

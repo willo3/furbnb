@@ -1,13 +1,8 @@
 
-
 <div class="container">
   <h1>Pet Details:</h1>
-  <div class="card-pet-closeup" id="photo-pet">
-     <% if @pet.photo.attached? %>
-        <%= cl_image_tag @pet.photo.key %>
-        <% else %>
-        <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677675099/Untitled_design_2_fibtjg.png">
-        <% end %>
+  <div class="card-pet-closeup">
+  <%= cl_image_tag @pet.photo.key, height: 300, width: 300, crop: :fill %>
     <div class="card-pet-infos">
   <ul>
     <li><strong>Name:</strong> <%= @pet.name %></li>
