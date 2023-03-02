@@ -12,7 +12,7 @@
       <%# Loop for iterating pet cards %>
         <% @pet.each do |pet| %>
           <%# Pet card %>
-
+          <%= link_to pet_path(pet) do %>
           <article class="petcard">
             <%# <img
               class="petcard__background"
@@ -28,7 +28,7 @@
         <% end %>
             <div class="petcard__content | flow">
               <div class="petcard__content--container | flow">
-                <h2 class="petcard__title"><%= link_to pet.name, pet_path(pet) %></h2>
+                <h2 class="petcard__title"><%= pet.name %></h2>
                 <p class="petcard__description">
                   <ul>
                     <li><strong><i class="fa-solid fa-paw"></i>  <%= pet.species %></strong></li>
@@ -41,6 +41,7 @@
             </div>
           </article>
           <%# end of pet card %>
+        <% end %>
         <% end %>
         <%# end of loop %>
       </div>
