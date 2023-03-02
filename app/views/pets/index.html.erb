@@ -10,7 +10,7 @@
     <div class="centered">
       <section class="cards">
       <%# Loop for iterating pet cards %>
-        <% @pet.each do |pet| %>
+        <% @pets.each do |pet| %>
           <%# Pet card %>
           <%= link_to pet_path(pet) do %>
           <article class="petcard">
