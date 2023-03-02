@@ -3,7 +3,12 @@ class PetsController < ApplicationController
 
   def index
     if params[:query].present?
-      @pets = Pet.where(species: params[:query])
+      sql_query = <<~SQL
+        pets.name ILIKE :query
+        OR pets.species ILIKE :query
+        OR pets.sex ILIKE :query
+      SQL
+      @pets = Pet.where(sql_query, query: "%#{params[:query]}%")
     else
       @pets = Pet.all
     end
