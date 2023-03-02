@@ -30,7 +30,7 @@ unsplash_images.each do |image|
   user.save!
   end
 
-  animals = ['Dog', 'Cat', 'Rabbit', 'Duck', 'Hamster', 'Iguana', 'Parrot']
+  animals = ['Dog',   'Cat', 'Rabbit', 'Duck', 'Hamster', 'Iguana', 'Parrot']
 
   unsplash_images = Unsplash::Photo.search('dog', 1, 5)
 
@@ -44,7 +44,7 @@ unsplash_images.each do |image|
     user: User.all.sample,
     special_instructions: image.description
   )
-  file = URI.open(image.urls.regular)
+  file = URI.open(image.urls.small)
   pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
   pet.save!
   end
