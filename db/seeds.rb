@@ -114,7 +114,7 @@ unsplash_images = Unsplash::Photo.search('hamster', 1, 5)
 unsplash_images.each do |image|
 pet = Pet.new(
   name: Faker::Creature::Dog.name,
-  species: 'Hammster',
+  species: 'Hamster',
   sex: Faker::Gender.binary_type,
   neutered: [true, false].sample,
   age: rand(0..2),
