@@ -2,18 +2,48 @@
 
   <h1>All Adorable Pets</h1>
 
-  <%= link_to "Add a new pet", new_pet_path, class: "btn btn-gradient" %>
+  <%= link_to "Add your pet", new_pet_path, class: "btn btn-gradient" %>
 
+<%# Grid for pet cards %>
+<div class="petcard-grid">
   <div>
     <div class="centered">
       <section class="cards">
+      <%# Loop for iterating pet cards %>
         <% @pet.each do |pet| %>
-        <article class="card" id="photo-pet">
-        <p class="card-name"><%= link_to pet.name, pet_path(pet) %></p>
-        <%= cl_image_tag pet.photo.key, height: 200, width: 200, crop: :fill %>
-          <%= link_to "Details", pet_path(pet), class: "btn btn-gradient" %>
-        </article>
+          <%# Pet card %>
+
+          <article class="petcard">
+            <%# <img
+              class="petcard__background"
+              src="https://res.cloudinary.com/drfmymoki/image/upload/v1677518955/kitten-playing-with-toy-mouse-royalty-free-image-590055188-1542816918_jwpeym.jpg"
+              alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+              width="1920"
+              height="2193"
+            /> %>
+            <% if pet.photo.attached? %>
+             <%= cl_image_tag pet.photo.key, class: "petcard__background" %>
+             <% else %>
+        <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677675099/Untitled_design_2_fibtjg.png">
         <% end %>
-      </section>
-    </div>
+            <div class="petcard__content | flow">
+              <div class="petcard__content--container | flow">
+                <h2 class="petcard__title"><%= link_to pet.name, pet_path(pet) %></h2>
+                <p class="petcard__description">
+                  <ul>
+                    <li><strong><i class="fa-solid fa-paw"></i>  <%= pet.species %></strong></li>
+                    <li><strong><i class="fa-solid fa-mars-and-venus"></i>  <%= pet.sex %></strong></li>
+                    <li><strong><i class="fa-solid fa-cake-candles"></i>    <%= pet.age %></strong></li>
+                    <li><strong><%= pet.special_instructions %></strong></li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </article>
+          <%# end of pet card %>
+        <% end %>
+        <%# end of loop %>
+      </div>
+    </section>
   </div>
+</div>
