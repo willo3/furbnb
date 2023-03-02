@@ -30,7 +30,24 @@ unsplash_images.each do |image|
   user.save!
   end
 
-animals = ['Cat', 'Dog', 'Rabbit', 'Duck', 'Hamster', 'Iguana', 'Parrot']
+  animals = ['Dog', 'Cat', 'Rabbit', 'Duck', 'Hamster', 'Iguana', 'Parrot']
+
+  unsplash_images = Unsplash::Photo.search('dog', 1, 5)
+
+  unsplash_images.each do |image|
+  pet = Pet.new(
+    name: Faker::Creature::Dog.name,
+    species: 'Dog',
+    sex: Faker::Gender.binary_type,
+    neutered: [true, false].sample,
+    age: rand(0..8),
+    user: User.all.sample,
+    special_instructions: image.description
+  )
+  file = URI.open(image.urls.regular)
+  pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+  pet.save!
+  end
 
 unsplash_images = Unsplash::Photo.search('cat', 1, 5)
 
@@ -52,22 +69,6 @@ end
 
 # p unsplash_images.first.description
 
-unsplash_images = Unsplash::Photo.search('dog', 1, 5)
-
-unsplash_images.each do |image|
-pet = Pet.new(
-  name: Faker::Creature::Dog.name,
-  species: 'Dog',
-  sex: Faker::Gender.binary_type,
-  neutered: [true, false].sample,
-  age: rand(0..8),
-  user: User.all.sample,
-  special_instructions: image.description
-)
-file = URI.open(image.urls.regular)
-pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-pet.save!
-end
 
 unsplash_images = Unsplash::Photo.search('rabbit', 1, 5)
 
