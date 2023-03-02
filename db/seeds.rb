@@ -32,7 +32,7 @@ unsplash_images.each do |image|
   file = URI.open(image.urls.small)
   user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
   user.save!
-end
+  end
 # ==========
 
 # Generating 5 dogs:
