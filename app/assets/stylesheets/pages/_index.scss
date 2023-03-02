@@ -1,13 +1,21 @@
 // Import page-specific CSS files here.
 @import "home";
-
-#grid {
-  text-decoration: none;
-}
+@import "animated_cards";
 
 .cards {
   display: flex;
   flex-wrap: wrap;
+}
+
+#photo-pet img {
+  height: 300px;
+  width: 300px;
+  flex-wrap: wrap;
+  object-fit: cover;
+}
+
+#button-pet-details {
+  margin-top: 10px;
 }
 
 .card {
