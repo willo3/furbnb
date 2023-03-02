@@ -66,7 +66,6 @@ unsplash_images.each do |image|
     age: rand(0..20),
     user: User.all.sample,
     special_instructions: image.description
-
   )
   file = URI.open(image.urls.small)
   pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
