@@ -2,20 +2,7 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @pet = Pet.all
-    # search code
-    if params[:query].present?
-      sql_query = <<~SQL
-        pets.name ILIKE :query
-        OR pets.species ILIKE :query
-        OR pets.sex ILIKE :query
-      SQL
-      # change :users to :user
-      @pets = Pet.where(sql_query, query: "%#{params[:query]}%")
-      # code end here
-    else
-      @pets = Pet.all
-    end
+    @pets = Pet.all
   end
 
   def show
