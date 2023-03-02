@@ -102,6 +102,8 @@ GEM
       rest-client (>= 2.0.0)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
+    cssbundling-rails (1.1.2)
+      railties (>= 6.0.0)
     date (3.3.3)
     debug (1.7.1)
       irb (>= 1.5.0)
@@ -284,6 +286,7 @@ DEPENDENCIES
   bootstrap
   capybara
   cloudinary
+  cssbundling-rails (~> 1.1)
   debug
   devise
   dotenv-rails

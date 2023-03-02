@@ -1,9 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
-
-#grid {
-  text-decoration: none;
-}
+@import "animated_cards";
 
 .cards {
   display: flex;
