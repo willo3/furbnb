@@ -8,7 +8,7 @@
     <div class="centered">
       <section class="cards">
         <% @pet.each do |pet| %>
-        <article class="card">
+        <article class="card" id="photo-pet">
         <p class="card-name"><%= link_to pet.name, pet_path(pet) %></p>
         <%= cl_image_tag pet.photo.key, height: 200, width: 200, crop: :fill %>
           <%= link_to "Details", pet_path(pet), class: "btn btn-gradient" %>
