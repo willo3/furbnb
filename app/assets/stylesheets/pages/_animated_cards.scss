@@ -3,10 +3,21 @@
 
 /* CARD COMPONENT */
 
+#pet-index {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  #pet-index .container {
+    max-width: 2280px;
+  }
+}
+
 .petcard {
   display: grid;
   place-items: center;
-  width: 80vw;
+  width: 320px;
   max-width: 21.875rem;
   height: 28.125rem;
   overflow: hidden;
@@ -24,7 +35,9 @@
 .petcard__background {
   object-fit: cover;
   max-width: 100%;
-  height: 100%;
+  height: 450px;
+  width: 100%;
+  // z-index: -1;
 }
 
 .petcard__content {
@@ -98,7 +111,7 @@
 
 @media (any-hover: hover) and (any-pointer: fine) {
   .petcard__content {
-    transform: translateY(62%);
+    transform: translateY(35%);
     transition: transform 500ms ease-out;
     transition-delay: 500ms;
   }
