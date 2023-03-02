@@ -39,3 +39,49 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+
+.button-52 {
+  z-index: 2;
+  font-family: "Montserrat", sans-serif;;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  #margin {
+  margin: 20px 40px 40px 20px;
+}
+}
+
+
+
+.button-52:after {
+  content: "";
+  background-color: #FFC400;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
