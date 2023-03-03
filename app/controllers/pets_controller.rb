@@ -9,6 +9,9 @@ class PetsController < ApplicationController
         OR pets.sex ILIKE :query
       SQL
       @pets = Pet.where(sql_query, query: "%#{params[:query]}%")
+      # @pets = Pet.search(params[:query])
+      # SELECT * FROM pets WHERE species IN ('Rabbit', 'Duck', 'Hamster')
+
     else
       @pets = Pet.all
     end
