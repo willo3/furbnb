@@ -41,7 +41,7 @@
   color: white;
 }
 
-
+// BUTTON 52
 .button-52 {
   z-index: 2;
   font-family: "Montserrat", sans-serif;;
@@ -58,11 +58,9 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   #margin {
-  margin: 20px 40px 40px 20px;
+    margin: 20px 40px 40px 20px;
+  }
 }
-}
-
-
 
 .button-52:after {
   content: "";
@@ -83,6 +81,41 @@
 
 @media (min-width: 768px) {
   .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
+// ====================
+
+// BUTTON 42
+.button-42 {
+  z-index: 2;
+  font-family: "Montserrat", sans-serif;;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  #margin {
+    margin: 20px 40px 40px 20px;
+  }
+}
+
+a.button-42 {
+  color:red;
+}
+
+.button-42:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .button-42 {
     padding: 13px 50px 13px;
   }
 }
