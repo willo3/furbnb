@@ -183,6 +183,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.2-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.14.2-x86_64-linux)
+      racc (~> 1.4)
     oauth2 (2.0.9)
       faraday (>= 0.17.3, < 3.0)
       jwt (>= 1.0, < 3.0)
@@ -192,9 +194,6 @@ GEM
       version_gem (~> 1.1)
     orm_adapter (0.5.0)
     pg (1.4.6)
-    pg_search (2.3.6)
-      activerecord (>= 5.2)
-      activesupport (>= 5.2)
     popper_js (2.11.6)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -306,6 +305,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails
@@ -321,7 +321,6 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
-  pg_search
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
   sassc-rails
