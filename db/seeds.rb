@@ -11,7 +11,6 @@
 require 'open-uri'
 require 'yaml'
 require 'faker'
-require 'open-uri'
 
 Pet.destroy_all
 User.destroy_all

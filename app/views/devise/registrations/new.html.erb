@@ -5,6 +5,7 @@
   data: {turbo: false}) do |f| %>
 
   <div class="form-inputs">
+    <%= f.file_field :avatar %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,

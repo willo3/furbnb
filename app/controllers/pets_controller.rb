@@ -9,6 +9,10 @@ class PetsController < ApplicationController
         OR pets.sex ILIKE :query
       SQL
       @pets = Pet.where(sql_query, query: "%#{params[:query]}%")
+      # @pets = Pet.search(params[:query])
+      # SELECT * FROM pets WHERE species IN ('Rabbit', 'Duck', 'Hamster')
+      # OR pets.species IN :query
+
     else
       @pets = Pet.all
     end
@@ -26,7 +30,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     if @pet.save
-      redirect_to @pet, notice: "Pet was successfully created!"
+      redirect_to @pet, notice: "Pet was successfully ADDED!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -43,9 +47,13 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    set_pet
-    @pet.destroy
-    redirect_to pets_path, status: :see_other
+    @pet = Pet.find(params[:id])
+    if current_user.id == @pet.user_id
+      @pet.destroy
+      redirect_to pets_path, notice: "Pet was successfully DELETED."
+    else
+      redirect_to @pet, alert: "You can only delete your own pets!"
+    end
   end
 
   private
