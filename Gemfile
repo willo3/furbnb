@@ -64,7 +64,7 @@ gem 'unsplash'
 
 gem 'cloudinary'
 
-gem "pg_search"
+# gem "pg_search"
 
 gem "dotenv-rails", groups: [:development, :test]
 
