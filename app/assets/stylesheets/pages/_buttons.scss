@@ -43,6 +43,7 @@
 
 // BUTTON 52
 .button-52 {
+  color: black;
   z-index: 2;
   font-family: "Montserrat", sans-serif;;
   font-size: 16px;
@@ -72,16 +73,19 @@
   top: 7px;
   left: 7px;
   transition: 0.2s;
+  color: black;
 }
 
 .button-52:hover:after {
   top: 0px;
   left: 0px;
+  color: black;
 }
 
 @media (min-width: 768px) {
   .button-52 {
     padding: 13px 50px 13px;
+    color: black;
   }
 }
 // ====================
