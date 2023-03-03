@@ -1,9 +1,11 @@
 <div id="pet-index">
 <div class="container">
 
-  <h1>All Adorable Pets</h1>
+  <h1 id="header-index">All Pets</h1>
 
-  <%= link_to "Add your pet", new_pet_path, class: "btn btn-gradient" %>
+  <%= link_to "Add your pet", new_pet_path, class: "button-52" %>
+
+  <div class="spacer"></div>
 
 <%# Grid for pet cards %>
 <div class="petcard-grid">
@@ -25,7 +27,7 @@
             <% if pet.photo.attached? %>
              <%= cl_image_tag pet.photo.key, class: "petcard__background" %>
              <% else %>
-        <%# <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677675099/Untitled_design_2_fibtjg.png"> %>
+        <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677675099/Untitled_design_2_fibtjg.png">
         <% end %>
             <div class="petcard__content | flow">
               <div class="petcard__content--container | flow">

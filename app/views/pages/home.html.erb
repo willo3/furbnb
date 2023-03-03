@@ -2,15 +2,20 @@
   <div class="container">
     <h1><strong>Share your pet</strong></h1>
     <h1><strong>or lend it to others</strong></h1>
-    <%= link_to "See all pets", pets_path, class: "btn btn-gradient" %>
+    <div class="spacer"></div>
+    <%= link_to "See all pets", pets_path, class: "button-52" %>
   </div>
 </div>
 
 <div class="expand-menu-container">
+
   <div class="box">
+    <%= link_to pets_path(query:'Dog') do %>
     <img src="https://res.cloudinary.com/drfmymoki/image/upload/c_crop,g_north,h_549,w_1220/v1677519075/4.-labrador-1220x687_g5awms.jpg">
     <span><%= link_to "Dogs", pets_path(query:'%Dog%') %></span>
+  <% end %>
   </div>
+
   <div class="box">
     <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677518955/kitten-playing-with-toy-mouse-royalty-free-image-590055188-1542816918_jwpeym.jpg">
     <span><%= link_to "Cats", pets_path(query:'Cat') %></span>
