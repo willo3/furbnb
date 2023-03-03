@@ -2,3 +2,7 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+// flatpickr installation process
+console.log('hey!');
+import { flatFunc } from "./flatpickr"
+flatFunc();
