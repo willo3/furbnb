@@ -1,9 +1,25 @@
-<div class="container">
-<h2>Please, book your Charming critter:</h2>
+<%# flatpickr installation proces %>
 
-<%= simple_form_for [@pet, @booking] do |f| %>
-  <%= f.input :start_time %>
-  <%= f.input :end_time %>
-  <%= f.submit %>
-<% end %>
+
+<div class="container" data-controller="datepickr">
+  <h2>Please, book your Charming critter:</h2>
+
+  <%= simple_form_for @booking do |f| %>
+    <%= f.input :start_time, as: :string, placeholder: 'pick a date!', input_html: { data: { datepickr_target: 'startTime' } } %>
+    <%= f.input :end_time, as: :string, placeholder: 'pick a date!', input_html: { data: { datepickr_target: 'endTime' } } %>
+  <% end %>
+  <%#= form_with model: Booking.new do |f| %>
+    <%#= f.text_field :start_time,
+      data: {
+        controller: "datepickr",
+        flatpickr_date_format: "Y-m-d",
+        flatpickr_min_date: Time.zone.now
+      } %>
+      <%#= f.text_field :end_time,
+      data: {
+        controller: "datepickr",
+        flatpickr_date_format: "Y-m-d",
+        flatpickr_min_date: Time.zone.now
+      } %>
+  <%# end %>
 </div>
