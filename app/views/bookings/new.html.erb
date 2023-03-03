@@ -1,9 +1,58 @@
-<div class="container">
-<h2>Please, book your Charming critter:</h2>
+<%# flatpickr installation proces %>
 
-<%= simple_form_for [@pet, @booking] do |f| %>
-  <%= f.input :start_time %>
-  <%= f.input :end_time %>
-  <%= f.submit %>
-<% end %>
+<div class="super-container">
+<div class="container" data-controller="datepickr">
+  <h1>When do want to have fun with <%= @pet.name %> ?</h1>
+<div class="inner-container">
+  <%= simple_form_for @booking do |f| %>
+    <%= f.input :start_time, as: :string, placeholder: 'pick a date!', input_html: { data: { datepickr_target: 'startTime' } } %>
+    <%= f.input :end_time, as: :string, placeholder: 'pick a date!', input_html: { data: { datepickr_target: 'endTime' } } %>
+    <%= f.submit 'Book', :class => 'button-42' %>
+  <% end %>
+  </div>
+  <%#= form_with model: Booking.new do |f| %>
+    <%#= f.text_field :start_time,
+      data: {
+        controller: "datepickr",
+        flatpickr_date_format: "Y-m-d",
+        flatpickr_min_date: Time.zone.now
+      } %>
+      <%#= f.text_field :end_time,
+      data: {
+        controller: "datepickr",
+        flatpickr_date_format: "Y-m-d",
+        flatpickr_min_date: Time.zone.now
+      } %>
+  <%# end %>
+</div>
+</div>
+
+
+<div class="container">
+  <div class="spacer-show">
+    <div class="card-pet-closeup">
+      <%= cl_image_tag @pet.photo.key, crop: :fill %>
+      <div class="card-pet-infos">
+
+        <ul>
+          <li id="pet-name"><strong><%= @pet.name %></strong></li>
+          <li><strong><i class="fa-solid fa-paw"></i>  <%= @pet.species %></strong></li>
+          <li><strong><i class="fa-solid fa-mars-and-venus"></i>  <%= @pet.sex %></strong></li>
+          <li><strong><i class="fa-solid fa-cake-candles"></i>    <%= @pet.age %></strong></li>
+          <li>
+            <% if @pet.neutered %>
+              <i class="fas fa-check-circle" style="color: green;"></i>
+            <% else %>
+              <i class="fas fa-times-circle" style="color: red;"></i>
+            <% end %>
+            <strong>Neutered</strong>
+          </li>
+
+          <li><strong>Special Instructions:</strong></li>
+         <li> <%= @pet.special_instructions %></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
 </div>
