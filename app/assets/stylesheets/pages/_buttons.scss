@@ -41,7 +41,7 @@
   color: white;
 }
 
-
+// BUTTON 52
 .button-52 {
   z-index: 2;
   font-family: "Montserrat", sans-serif;;
@@ -58,11 +58,9 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   #margin {
-  margin: 20px 40px 40px 20px;
+    margin: 20px 40px 40px 20px;
+  }
 }
-}
-
-
 
 .button-52:after {
   content: "";
@@ -86,18 +84,17 @@
     padding: 13px 50px 13px;
   }
 }
+// ====================
 
-
-.button-53 {
+// BUTTON 42
+.button-42 {
   z-index: 2;
   font-family: "Montserrat", sans-serif;;
   font-size: 16px;
   font-weight: 200;
   letter-spacing: 1px;
   padding: 13px 20px 13px;
-  margin-top: 4em;
   outline: 0;
-  border: 1px solid black;
   cursor: pointer;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
@@ -105,31 +102,20 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   #margin {
-  margin: 20px 40px 40px 20px;
-}
-}
-
-
-
-.button-53:after {
-  content: "";
-  background-color: #0F60C4;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
-  transition: 0.2s;
+    margin: 20px 40px 40px 20px;
+  }
 }
 
-.button-53:hover:after {
-  top: 0px;
-  left: 0px;
+a.button-42 {
+  color:red;
+}
+
+.button-42:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 768px) {
-  .button-53 {
+  .button-42 {
     padding: 13px 50px 13px;
   }
 }
