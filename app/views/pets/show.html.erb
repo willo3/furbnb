@@ -4,7 +4,7 @@
     <div class="card-pet-closeup">
       <%= cl_image_tag @pet.photo.key, crop: :fill %>
       <div class="card-pet-infos">
-          <a href="<%= pets_path %>"><i class="fa-solid fa-caret-left back-arrow"></i></a>
+        <a href="#" onclick="window.history.back();return false;"><i class="fa-solid fa-caret-left back-arrow"></i></a>
         <ul>
           <li id="pet-name"><strong><%= @pet.name %></strong></li>
           <li><strong><i class="fa-solid fa-paw"></i>  <%= @pet.species %></strong></li>
@@ -32,3 +32,5 @@
     </div>
   </div>
 </div>
+
+
