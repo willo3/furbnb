@@ -8,26 +8,20 @@
 </div>
 
 <div class="expand-menu-container">
-
   <div class="box">
-    <%= link_to pets_path(query:'Dog') do %>
     <img src="https://res.cloudinary.com/drfmymoki/image/upload/c_crop,g_north,h_549,w_1220/v1677519075/4.-labrador-1220x687_g5awms.jpg">
-   <span><%= link_to "Dogs", pets_path(query:'%Dog%') %></span>
-  <% end %>
-
+    <span><%= link_to "Dogs", pets_path(query:'%Dog%') %></span>
   </div>
-
   <div class="box">
     <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677518955/kitten-playing-with-toy-mouse-royalty-free-image-590055188-1542816918_jwpeym.jpg">
     <span><%= link_to "Cats", pets_path(query:'Cat') %></span>
   </div>
   <div class="box">
     <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1677518639/7030094-cute-animals_lganeb.jpg">
-    <span>Small Pets</span>
-    <%# <span><%= link_to "Small Pets", pets_path(query:'%Rabbit%','%Hamster%','%Duck%') %>
+    <span><%= link_to "Rabbits", pets_path(query:'%Rabbit%') %></span>
   </div>
   <div class="box">
     <img src="https://res.cloudinary.com/drfmymoki/image/upload/c_crop,g_north,h_308,w_800/v1677584374/What-kind-of-animal-is-parrot_egumo6.jpg">
-    <span>Exotics</span>
+    <span><%= link_to "Parrots", pets_path(query:'%Parrot%') %></span>
   </div>
 </div>
