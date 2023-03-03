@@ -24,7 +24,10 @@
         </ul>
         <%# <%= link_to "Edit", edit_pet_path(@pet), class: "btn btn-gradient"%>
         <%= link_to "Book me!", new_pet_booking_path(@pet), class: "button-52"%>
-
+        <%# <% link_to 'Delete'
+        pet_path(@pet),
+        data: {turbo_method: :delete, turbo_method: "Are you sure?"}
+        %>
       </div>
     </div>
   </div>
