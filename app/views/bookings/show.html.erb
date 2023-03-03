@@ -1,17 +1,26 @@
-<h2>Booking Details:</h2>
+<div class="container">
+  <h2 class="text-center mt-5 text-dark"><strong>Booking Details</strong></h2>
+  <div class="spacer-show">
+    <div class="card-pet-closeup">
+      <%= cl_image_tag @pet.photo.key, crop: :fill %>
+      <div class="card-pet-infos">
+          <a href="<%= pets_path %>"><i class="fa-solid fa-caret-left back-arrow"></i></a>
+        <ul>
+          <li id="pet-name"><strong><%= @pet.name %></strong></li>
+          <hr>
+         <ul>
+          <li><strong>Start Time:</strong> <%= @booking.start_time %></li>
+          <li><strong>End time:</strong> <%= @booking.end_time %></li>
+        </ul>
+        </ul>
+        <%= link_to "Edit", edit_booking_path(@booking), class: "button-52" %>
 
-<ul>
-  <li><strong>Start Time:</strong> <%= @booking.start_time %></li>
-  <li><strong>Species:</strong> <%= @booking.end_time %></li>
-</ul>
-
-
-<%= link_to "Edit", edit_booking_path(@booking)%>
-<%= link_to "Back to Adorable Pets page", pets_path %>
-
-<%# <% link_to 'Delete'
-  pet_path(@pet),
-  data: {turbo_method: :delete, turbo_method: "Are you sure?"}
-%>
+        <%= link_to "Cancel",
+          pet_path(@pet),
+          class: "button-53",
+         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+      </div>
+    </div>
+  </div>
 </div>
-
