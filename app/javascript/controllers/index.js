@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import DatepickrController from "./datepickr_controller"
+application.register("datepickr", DatepickrController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
