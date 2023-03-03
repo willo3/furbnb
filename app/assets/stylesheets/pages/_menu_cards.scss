@@ -38,19 +38,19 @@
   height: 100%;
 }
 
-// .card-name {
-//   padding-left: 20px;
-//   padding-top: 10px;
-//   font-family: Arial, Helvetica, sans-serif;
-//   font-size: large;
-//   font-weight: bolder;
-// }
+.card-name {
+  padding-left: 20px;
+  padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bolder;
+}
 
 
 
 // .card-pet-closeup {
 //   overflow: hidden;
-//   height: auto;
+//   height: 100%;
 //   background: white;
 //   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 //   display: flex;
@@ -58,9 +58,9 @@
 // }
 
 // .card-pet-closeup img {
-//   padding: 10px;
-//   height: 100%;
-//   width: auto;
+//   padding: 0;
+//   height: 750%;
+//   width: 750px;
 //   object-fit: cover;
 // }
 
@@ -75,10 +75,86 @@
 //   line-height: 1.4;
 //   opacity: .7;
 //   margin-bottom: 0;
-//   margin-top: 8px;
+//   margin-top: 0;
 // }
 
 // .card-pet-closeup .card-pet-infos {
 //   padding: 16px;
 //   font-size: xx-large;
 // }
+
+// .card-pet-infos ul {
+//   list-style: none;
+//   padding-left: 0;
+// }
+
+.spacer-show {
+  margin: 60px;
+}
+
+.card-pet-closeup {
+  overflow: hidden;
+  height: 100%;
+  // background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 0.45em;
+}
+
+.card-pet-closeup img {
+  padding: 0;
+  height: 650px;
+  width: 650px;
+  object-fit: cover;
+}
+
+.card-pet-closeup h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-pet-closeup p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.card-pet-closeup .card-pet-infos {
+  padding: 16px;
+  font-size: xx-large;
+}
+
+.card-pet-infos ul {
+  list-style: none;
+  padding-left: 0;
+  #pet-name {
+    font-size: larger;
+  }
+}
+
+.card-pet-closeup {
+  position: relative;
+}
+
+.card-pet-closeup .back-arrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 32px;
+  color: black;
+  opacity: 0.7;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+
+  -webkit-text-stroke: 2px white;
+  -webkit-text-fill-color: black;
+}
+
+.card-pet-closeup .back-arrow:hover {
+  opacity: 1;
+  text-shadow: none;
+  box-shadow: none;
+}

@@ -112,38 +112,38 @@
 @media (any-hover: hover) and (any-pointer: fine) {
   .petcard__content {
     transform: translateY(35%);
-    transition: transform 500ms ease-out;
-    transition-delay: 500ms;
+    transition: transform 125ms ease-out;
+    transition-delay: 125ms;
   }
 
   .petcard__title::after {
     opacity: 0;
     transform: scaleX(0);
-    transition: opacity 1000ms ease-in, transform 500ms ease-out;
-    transition-delay: 500ms;
+    transition: opacity 250ms ease-in, transform 125ms ease-out;
+    transition-delay: 125ms;
     transform-origin: right;
   }
 
   .petcard__background {
-    transition: transform 500ms ease-in;
+    transition: transform 125ms ease-in;
   }
 
   .petcard__content--container > :not(.petcard__title),
   .petcard__button {
     opacity: 0;
-    transition: transform 500ms ease-out, opacity 500ms ease-out;
+    transition: transform 125ms ease-out, opacity 125ms ease-out;
   }
 
   .petcard:hover,
   .petcard:focus-within {
     transform: scale(1.05);
-    transition: transform 500ms ease-in;
+    transition: transform 125ms ease-in;
   }
 
   .petcard:hover .petcard__content,
   .petcard:focus-within .petcard__content {
     transform: translateY(0);
-    transition: transform 500ms ease-in;
+    transition: transform 125ms ease-in;
   }
 
   .petcard:focus-within .petcard__content {
@@ -160,8 +160,8 @@
   .petcard:focus-within .petcard__content--container > :not(.petcard__title),
   .petcard:focus-within .petcard__button {
     opacity: 1;
-    transition: opacity 500ms ease-in;
-    transition-delay: 1000ms;
+    transition: opacity 125ms ease-in;
+    transition-delay: 250ms;
   }
 
   .petcard:hover .petcard__title::after,
@@ -169,7 +169,7 @@
     opacity: 1;
     transform: scaleX(1);
     transform-origin: left;
-    transition: opacity 500ms ease-in, transform 500ms ease-in;
-    transition-delay: 500ms;
+    transition: opacity 125ms ease-in, transform 125ms ease-in;
+    transition-delay: 125ms;
   }
 }

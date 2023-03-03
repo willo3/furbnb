@@ -1,6 +1,16 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "animated_cards";
+@import "navbar";
+
+#header-index {
+  font-family: "Montserrat", sans-serif;;
+  margin: 20px;
+}
+
+.spacer {
+  margin:20px;
+}
 
 .cards {
   display: flex;
