@@ -11,6 +11,7 @@ class PetsController < ApplicationController
       @pets = Pet.where(sql_query, query: "%#{params[:query]}%")
       # @pets = Pet.search(params[:query])
       # SELECT * FROM pets WHERE species IN ('Rabbit', 'Duck', 'Hamster')
+      # OR pets.species IN :query
 
     else
       @pets = Pet.all
