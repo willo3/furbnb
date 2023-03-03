@@ -1,10 +1,11 @@
 
+
 <div class="container">
   <div class="spacer-show">
     <div class="card-pet-closeup">
       <%= cl_image_tag @pet.photo.key, crop: :fill %>
       <div class="card-pet-infos">
-          <a href="<%= pets_path %>"><i class="fa-solid fa-caret-left back-arrow"></i></a>
+        <a href="<%= pets_path %>"><i class="fa-solid fa-caret-left back-arrow"></i></a>
         <ul>
           <li id="pet-name"><strong><%= @pet.name %></strong></li>
           <li><strong><i class="fa-solid fa-paw"></i>  <%= @pet.species %></strong></li>
