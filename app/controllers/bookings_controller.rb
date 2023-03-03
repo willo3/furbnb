@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.pet = @pet
     @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to pet_booking_path(@pet, @booking)
     else
       render :new, status: :unprocessable_entity
     end
@@ -48,6 +48,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_time, :end_time)
+    params.require(:booking).permit(:start_time, :end_time, :pet_id)
   end
 end

@@ -4,7 +4,7 @@
 <div class="container" data-controller="datepickr">
   <h1>When do want to have fun with <%= @pet.name %> ?</h1>
 <div class="inner-container">
-  <%= simple_form_for @booking do |f| %>
+  <%= simple_form_for [@pet, @booking] do |f| %>
     <%= f.input :start_time, as: :string, placeholder: 'pick a date!', input_html: { data: { datepickr_target: 'startTime' } } %>
     <%= f.input :end_time, as: :string, placeholder: 'pick a date!', input_html: { data: { datepickr_target: 'endTime' } } %>
     <%= f.submit 'Book', :class => 'button-42' %>

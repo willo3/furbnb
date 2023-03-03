@@ -1,10 +1,12 @@
 <div class="container">
   <h1 class="text-center mt-5 text-dark"><strong>Booking Details</strong></h1
+ 
+<div class="container">
+  <div class="spacer-show">
     <div class="card-pet-closeup">
       <%= cl_image_tag @pet.photo.key, crop: :fill %>
       <div class="card-pet-infos">
-          <a href="<%= pets_path %>"><i class="fa-solid fa-caret-left back-arrow"></i></a>
-        <ul>
+     <ul>
           <li id="pet-name"><strong><%= @pet.name %></strong></li>
           <hr>
          <ul>
@@ -19,6 +21,9 @@
           class: "button-42",
          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
         %>
+
+
+
       </div>
     </div>
   </div>
