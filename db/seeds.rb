@@ -34,136 +34,27 @@ unsplash_images.each do |image|
   end
 # ==========
 
-# Generating 5 dogs:
-unsplash_images = Unsplash::Photo.search('dog', 1, 5)
+# Generating 5 of each animal listed in the variable animals:
+animals = [ {species: 'dog', max_age: 10}, {species: 'cat', max_age: 20}, {species: 'rabbit', max_age: 5}, {species: 'duck', max_age: 10}, {species: 'hamster', max_age:2}, {species: 'iguana', max_age:10}, {species: 'parrot', max_age:100} ]
 
-unsplash_images.each do |image|
-  pet = Pet.new(
-    name: Faker::Creature::Dog.name,
-    species: 'Dog',
-    sex: Faker::Gender.binary_type,
-    neutered: [true, false].sample,
-    age: rand(0..8),
-    user: User.all.sample,
-    special_instructions: image.description
-  )
-  file = URI.open(image.urls.small)
-  pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-  pet.save!
-end
-# ==========
+animals.each do |animal|
+puts animal
+  unsplash_images = Unsplash::Photo.search(animal[:species], 1, 5)
 
-# Generating 5 cats:
-unsplash_images = Unsplash::Photo.search('cat', 1, 5)
-
-unsplash_images.each do |image|
-  pet = Pet.new(
-    name: Faker::Creature::Dog.name,
-    species: 'Cat',
-    sex: Faker::Gender.binary_type,
-    neutered: [true, false].sample,
-    age: rand(0..20),
-    user: User.all.sample,
-    special_instructions: image.description
-  )
-  file = URI.open(image.urls.small)
-  pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-  pet.save!
-end
-# ==========
-
-# Generating 5 rabbits:
-unsplash_images = Unsplash::Photo.search('rabbit', 1, 5)
-
-unsplash_images.each do |image|
-  pet = Pet.new(
-    name: Faker::Creature::Dog.name,
-    species: 'Rabbit',
-    sex: Faker::Gender.binary_type,
-    neutered: [true, false].sample,
-    age: rand(0..5),
-    user: User.all.sample,
-    special_instructions: image.description
-  )
-  file = URI.open(image.urls.small)
-  pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-  pet.save!
-end
-# ==========
-
-# Generating 5 ducks:
-unsplash_images = Unsplash::Photo.search('duck', 1, 5)
-
-unsplash_images.each do |image|
-  pet = Pet.new(
-    name: Faker::Creature::Dog.name,
-    species: 'Duck',
-    sex: Faker::Gender.binary_type,
-    neutered: [true, false].sample,
-    age: rand(0..15),
-    user: User.all.sample,
-    special_instructions: image.description
-  )
-  file = URI.open(image.urls.small)
-  pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-  pet.save!
-end
-# ==========
-
-# Generating 5 hamsters:
-unsplash_images = Unsplash::Photo.search('hamster', 1, 5)
-
-unsplash_images.each do |image|
-  pet = Pet.new(
-    name: Faker::Creature::Dog.name,
-    species: 'Hamster',
-    sex: Faker::Gender.binary_type,
-    neutered: [true, false].sample,
-    age: rand(0..2),
-    user: User.all.sample,
-    special_instructions: image.description
-  )
-  file = URI.open(image.urls.small)
-  pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-  pet.save!
-end
-# ==========
-
-# Generating 5 iguanas:
-unsplash_images = Unsplash::Photo.search('iguana', 1, 5)
-
-unsplash_images.each do |image|
-  pet = Pet.new(
-    name: Faker::Creature::Dog.name,
-    species: 'Iguana',
-    sex: Faker::Gender.binary_type,
-    neutered: [true, false].sample,
-    age: rand(0..15),
-    user: User.all.sample,
-    special_instructions: image.description
-  )
-  file = URI.open(image.urls.small)
-  pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-  pet.save!
-end
-# ==========
-
-# Generating 5 parrots:
-unsplash_images = Unsplash::Photo.search('parrot', 1, 5)
-
-unsplash_images.each do |image|
-  pet = Pet.new(
-    name: Faker::Creature::Dog.name,
-    species: 'Parrot',
-    sex: Faker::Gender.binary_type,
-    neutered: [true, false].sample,
-    age: rand(0..25),
-    user: User.all.sample,
-    special_instructions: image.description
-  )
-  file = URI.open(image.urls.small)
-  pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-  pet.save!
+  unsplash_images.each do |image|
+    pet = Pet.new(
+      name: Faker::Creature::Dog.name,
+      species: animal[:species],
+      sex: Faker::Gender.binary_type,
+      neutered: [true, false].sample,
+      age: rand(0..animal[:max_age]),
+      user: User.all.sample,
+      special_instructions: image.description
+    )
+    file = URI.open(image.urls.small)
+    pet.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+    pet.save!
+  end
 end
 # ==========
 

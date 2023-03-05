@@ -2,17 +2,15 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].present?
+    if params[:banana].present?
+      @pets = Pet.where(species: params[:banana])
+    elsif params[:query].present?
       sql_query = <<~SQL
         pets.name ILIKE :query
         OR pets.species ILIKE :query
         OR pets.sex ILIKE :query
       SQL
       @pets = Pet.where(sql_query, query: "%#{params[:query]}%")
-      # @pets = Pet.search(params[:query])
-      # SELECT * FROM pets WHERE species IN ('Rabbit', 'Duck', 'Hamster')
-      # OR pets.species IN :query
-
     else
       @pets = Pet.all
     end
