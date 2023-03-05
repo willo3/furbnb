@@ -45,7 +45,7 @@ animals = [ {species: 'dog', max_age: 10},
           ]
 
 animals.each do |animal|
-puts animal
+
   unsplash_images = Unsplash::Photo.search(animal[:species], 1, 5)
 
   unsplash_images.each do |image|
