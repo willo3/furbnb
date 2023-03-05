@@ -35,14 +35,13 @@ unsplash_images.each do |image|
 # ==========
 
 # Generating 5 of each animal listed in the variable animals:
-animals = [ {species: 'dog', max_age: 10},
+animals = [{species: 'dog', max_age: 10},
             {species: 'cat', max_age: 20},
             {species: 'rabbit', max_age: 5},
             {species: 'duck', max_age: 10},
-            {species: 'hamster', max_age:2},
-            {species: 'iguana', max_age:10},
-            {species: 'parrot', max_age:100}
-          ]
+            {species: 'hamster', max_age: 2},
+            {species: 'iguana', max_age: 10},
+            {species: 'parrot', max_age: 100}]
 
 animals.each do |animal|
 
